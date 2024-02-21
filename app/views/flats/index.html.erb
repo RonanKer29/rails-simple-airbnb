@@ -1,0 +1,21 @@
+
+<h1>All our flats</h1>
+<h3>All <%= @flats.count %> flats</h3>
+<div class="banner d-flex p-2 justify-content-between">
+<div class="all-cards">
+<% @flats.each do |flat| %>
+<div class="card mb-3" style="width: 18rem;">
+  <img class="card-img-top" src="https://images.unsplash.com/photo-1502672023488-70e25813eb80?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGFwYXJ0bWVudHxlbnwwfHwwfHx8MA%3D%3D" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title"><%= flat.name %></h5>
+    <p class="card-text"><%= flat.address %></p>
+  <div class="flat-info">
+    <p class="card-text"><i class="fa-solid fa-euro-sign"> </i><%= flat.price_per_night %></p>
+    <p class="card-text"><i class="fa-solid fa-people-group">  </i> <%= flat.number_of_guests %></p>
+  </div>
+    <button type="button" class="btn btn-primary"><%= link_to "Go to flat", flat_path(flat), class: "color-white" %></button>
+  </div>
+</div>
+  <% end %>
+</div>
+</div>
